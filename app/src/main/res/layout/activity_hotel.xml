@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HotelActivity"
+    android:background="@drawable/bgd">
+
+    <TextView
+        android:id="@+id/hotelLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Hotel"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13999999" />
+
+    <TextView
+        android:id="@+id/appLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="App"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/hotelLogo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/hotelLogo"
+        app:layout_constraintTop_toBottomOf="@+id/hotelLogo" />
+
+    <TextView
+        android:id="@+id/convenientWayToBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Convenient way to Book"
+        android:textColor="@color/white"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="@+id/hotelLogo"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="@+id/hotelLogo"
+        app:layout_constraintTop_toBottomOf="@+id/appLogo" />
+
+    <Button
+        android:id="@+id/loginAsUser"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/button_bg"
+        android:drawableLeft="@drawable/persons"
+        android:text="Log in as User"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/convenientWayToBook"
+        app:layout_constraintVertical_bias="0.19999999" />
+
+    <Button
+        android:id="@+id/logInAsGuest"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_bg"
+        android:drawableLeft="@drawable/baseline_arrow_forward"
+        android:text="Log in as Guest"
+        app:layout_constraintEnd_toEndOf="@+id/loginAsUser"
+        app:layout_constraintStart_toStartOf="@+id/loginAsUser"
+        app:layout_constraintTop_toBottomOf="@+id/loginAsUser" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
