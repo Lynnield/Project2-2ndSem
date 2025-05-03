@@ -1,9 +1,14 @@
 package com.example.myapplication;
 
-import android.content.Intent; // <-- Missing import added
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,12 +31,44 @@ public class RegisterActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Navigate back to LoginActivity
-        TextView btn = findViewById(R.id.alreadyHaveAccount);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        // Get references to input fields and button
+        EditText usernameEditText = findViewById(R.id.inputUsername);
+        EditText emailEditText = findViewById(R.id.inputEmail);
+        EditText passwordEditText = findViewById(R.id.inputPassword);
+        EditText confirmPasswordEditText = findViewById(R.id.inputConfirmPassword);
+        Button registerButton = findViewById(R.id.buttonRegister);
+        TextView loginText = findViewById(R.id.alreadyHaveAccount);
+
+        // Handle click to go to LoginActivity
+        loginText.setOnClickListener(v -> {
+            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+        });
+
+        // Handle register button click
+        registerButton.setOnClickListener(v -> {
+            // Get the input values
+            String username = usernameEditText.getText().toString().trim();
+            String email = emailEditText.getText().toString().trim();
+            String password = passwordEditText.getText().toString().trim();
+            String confirmPassword = confirmPasswordEditText.getText().toString().trim();
+
+            // Basic validation for empty fields
+            if (TextUtils.isEmpty(username) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password) || TextUtils.isEmpty(confirmPassword)) {
+                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+            } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                // Validate email format
+                Toast.makeText(this, "Please enter a valid email address", Toast.LENGTH_SHORT).show();
+            } else if (!password.equals(confirmPassword)) {
+                // Check if the password and confirm password match
+                Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show();
+            } else {
+                // Simulate a successful registration (you can replace this with real registration logic)
+                // You can store the user details in a database or SharedPreferences
+                Toast.makeText(this, "Registration Successful!", Toast.LENGTH_SHORT).show();
+
+                // After successful registration, navigate to LoginActivity
                 startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                finish(); // Optional: prevent going back to register
             }
         });
     }
