@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,11 +24,17 @@ public class RegisterActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_register);
 
-        // Handle window insets
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        // Handle window insets for the back arrow
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.arrowBackRegister), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        //  Handle back arrow click
+        ImageButton backButton = findViewById(R.id.arrowBackRegister);
+        backButton.setOnClickListener(v -> {
+            onBackPressed(); // This will navigate to the previous activity in the back stack
         });
 
         // Get references to input fields and button
@@ -38,6 +44,13 @@ public class RegisterActivity extends AppCompatActivity {
         EditText confirmPasswordEditText = findViewById(R.id.inputConfirmPassword);
         Button registerButton = findViewById(R.id.buttonRegister);
         TextView loginText = findViewById(R.id.alreadyHaveAccount);
+
+        // Ensure views are initialized
+        if (usernameEditText == null || emailEditText == null || passwordEditText == null ||
+                confirmPasswordEditText == null || registerButton == null || loginText == null) {
+            Toast.makeText(this, "Error: Missing view components", Toast.LENGTH_SHORT).show();
+            return; // Exit the method early if views are not found.
+        }
 
         // Handle click to go to LoginActivity
         loginText.setOnClickListener(v -> {
@@ -63,7 +76,6 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show();
             } else {
                 // Simulate a successful registration (you can replace this with real registration logic)
-                // You can store the user details in a database or SharedPreferences
                 Toast.makeText(this, "Registration Successful!", Toast.LENGTH_SHORT).show();
 
                 // After successful registration, navigate to LoginActivity

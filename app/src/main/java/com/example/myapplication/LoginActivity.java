@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.View; // Needed for click listeners
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,11 +22,16 @@ public class LoginActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
-        // Handle window insets
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        // Handle window insets for back arrow
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.arrowBackRegister), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        // Handle back arrow click
+        findViewById(R.id.arrowBackRegister).setOnClickListener(v -> {
+            onBackPressed(); // or use finish() if you just want to close this activity
         });
 
         // Get references
@@ -49,9 +55,9 @@ public class LoginActivity extends AppCompatActivity {
             if (username.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Please enter username and password", Toast.LENGTH_SHORT).show();
             } else if (username.equals("admin") && password.equals("1234")) {
-                // Simulate successful login (you can replace this with your real login logic)
+                // Simulate successful login (replace with your actual login logic)
                 startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
-                finish(); // Optional: prevent going back to loginx
+                finish(); // Optional: prevents going back to login
             } else {
                 // Simulate failed login
                 Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show();
