@@ -13,9 +13,20 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".view_activity"
+            android:name=".viewRoom5_activity"
             android:exported="false" />
-        <!-- HotelActivity is now the launcher activity -->
+        <activity
+            android:name=".viewRoom4_activity"
+            android:exported="false" />
+        <activity
+            android:name=".viewroom3_activity"
+            android:exported="false" />
+        <activity
+            android:name=".viewRoom2_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".view_activity"
+            android:exported="false" /> <!-- HotelActivity is now the launcher activity -->
         <activity
             android:name=".HotelActivity"
             android:exported="true">

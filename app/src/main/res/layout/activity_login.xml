@@ -2,12 +2,23 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
     android:background="@drawable/bgd">
 
+    <!-- Back Arrow Button -->
+    <ImageButton
+        android:id="@+id/arrowBackRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#04FFFFFF"
+        android:background="@null"
+        android:contentDescription="Back"
+        app:srcCompat="@drawable/arrow_back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp" />
 
     <TextView
         android:id="@+id/logo"
@@ -43,7 +54,6 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
 
@@ -100,7 +110,6 @@
         android:orientation="horizontal"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/buttonLogin"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/buttonLogin"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin">
 
@@ -117,6 +126,5 @@
             android:text="SignUp"
             android:textColor="@color/black" />
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

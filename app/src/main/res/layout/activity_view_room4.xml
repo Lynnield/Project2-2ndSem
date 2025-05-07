@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/arrowBackRegister"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/hotel_container"
@@ -12,7 +12,7 @@
         android:id="@+id/imageView15"
         android:layout_width="450dp"
         android:layout_height="300dp"
-        app:srcCompat="@drawable/hotel2"
+        app:srcCompat="@drawable/hotel3"
         tools:layout_editor_absoluteX="-31dp"
         tools:layout_editor_absoluteY="-40dp" />
 
@@ -44,7 +44,7 @@
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Exclusive Suite"
+        android:text="Group Heaven"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView21"
@@ -78,7 +78,7 @@
         android:id="@+id/textView39"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="A001"
+        android:text="A004"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/textView25"
         app:layout_constraintTop_toBottomOf="@+id/textView25" />

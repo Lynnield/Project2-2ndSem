@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/arrowBackRegister"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/hotel_container"
@@ -10,11 +10,11 @@
 
     <ImageView
         android:id="@+id/imageView15"
-        android:layout_width="450dp"
-        android:layout_height="300dp"
-        app:srcCompat="@drawable/hotel2"
-        tools:layout_editor_absoluteX="-31dp"
-        tools:layout_editor_absoluteY="-40dp" />
+        android:layout_width="537dp"
+        android:layout_height="360dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/hotel1"
+        tools:layout_editor_absoluteY="-100dp" />
 
     <TextView
         android:id="@+id/textView21"
@@ -35,16 +35,19 @@
         android:id="@+id/BackArrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:backgroundTint="#00FFFFFF"
-        app:srcCompat="@drawable/arrow_back"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="2dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_back" />
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Exclusive Suite"
+        android:text="Double Deluxe"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView21"
@@ -78,7 +81,7 @@
         android:id="@+id/textView39"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="A001"
+        android:text="A002"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/textView25"
         app:layout_constraintTop_toBottomOf="@+id/textView25" />
