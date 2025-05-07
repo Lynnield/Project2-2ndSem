@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,28 +12,28 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class viewRoom2_Activity extends AppCompatActivity {
+public class payment_activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_view_room2);
+        setContentView(R.layout.activity_payment);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
         // Handle back arrow click
-        findViewById(R.id.BackArrow).setOnClickListener(v -> {
+        findViewById(R.id.backArrow).setOnClickListener(v -> {
             onBackPressed(); // or use finish() if you just want to close this activity
         });
 
-        // Correctly cast bookNow as ConstraintLayout
-        ConstraintLayout bookNowButton = findViewById(R.id.bookNow);
-        bookNowButton.setOnClickListener(v -> {
-            Intent intent = new Intent(viewRoom2_Activity.this, payment_activity.class);
+        // Handle payment button click
+        ConstraintLayout paymentButton = findViewById(R.id.payment);
+        paymentButton.setOnClickListener(v -> {
+            Intent intent = new Intent(payment_activity.this, confirmPayment_activity.class);
             startActivity(intent);
         });
     }

@@ -13,6 +13,15 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".confirmPayment_activity"
+            android:exported="false" />
+        <activity
+            android:name=".confirmPayement_activity"
+            android:exported="false" />
+        <activity
+            android:name=".payment_activity"
+            android:exported="false" />
+        <activity
             android:name=".viewRoom5_activity"
             android:exported="false" />
         <activity
