@@ -58,6 +58,10 @@ public class DashboardActivity extends AppCompatActivity {
             Intent intent = new Intent(DashboardActivity.this, viewRoom2_Activity.class);
             startActivity(intent);
         });
+        // Handle back arrow click
+        findViewById(R.id.arrowBAck).setOnClickListener(v -> {
+            onBackPressed(); // or use finish() if you just want to close this activity
+        });
 
 
     }
